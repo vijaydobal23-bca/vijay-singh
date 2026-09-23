@@ -1,0 +1,15 @@
+
+@import 'tailwindcss';
+
+
+.hero-section{
+  background: radial-gradient(
+  circle at 15% 10%,
+  #FF8C42 0%,
+  #F2622E 20%,
+  #E8451F 40%,
+  #C22A1A 60%,
+  #5A1810 80%,
+  #1A0805 100%
+);
+}
