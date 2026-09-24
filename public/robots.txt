@@ -1,0 +1,10 @@
+# robots.txt — Vijay Singh Portfolio
+# https://vijay-portfolio.vercel.app
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /src/
+
+# Sitemap
+Sitemap: https://vijay-portfolio.vercel.app/sitemap.xml

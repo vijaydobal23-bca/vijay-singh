@@ -161,27 +161,30 @@ const Skills = () => {
         <section
           id="my-skills"
           className="skills-headings sm:pt-[20rem] pt-[10vh]"
+          aria-label="Technical skills and technologies Vijay Singh works with"
         >
           <div className="w-full text-white">
             <div className="flex justify-between items-center sm:px-12 px-4">
-              <h1 className="text-[12vw] w-fit whitespace-nowrap font-neuehaas leading-none tracking-wide font-bold antialiased">
+              <h2 className="text-[12vw] w-fit whitespace-nowrap font-neuehaas leading-none tracking-wide font-bold antialiased">
                 My Skills
-              </h1>
+              </h2>
               <div className="w-full sm:block hidden sm:w-[20%] h-full">
-                <h5 className="text-[0.9vw] font-neuehaas font-semibold tracking-wider uppercase">
+                <p className="text-[0.9vw] font-neuehaas font-semibold tracking-wider uppercase">
                   Technologies I work with as a MERN Stack Engineer
-                </h5>
+                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* ── Cards ── */}
-        <section className="skills-cards-section text-black relative flex flex-col sm:flex-row justify-center items-center py-[5vh] sm:h-screen w-full">
+        <section className="skills-cards-section text-black relative flex flex-col sm:flex-row justify-center items-center py-[5vh] sm:h-screen w-full" aria-label="Skill cards — React.js, Node.js, MongoDB, Express.js">
         {skillsData.map((skill, index) => (
-          <div
+          <article
             key={index}
             className="skill-card-container m-[4vh] sm:-m-[11vw] cursor-pointer z-10 hover:scale-[110%] transition-transform duration-300"
+            itemScope
+            itemType="https://schema.org/Thing"
           >
             <div
               className="skill-card w-[90vw] sm:w-[22vw] relative"
@@ -196,13 +199,15 @@ const Skills = () => {
                   <img
                     src={skill.img}
                     className="w-full h-full object-contain scale-[150%]"
-                    alt={skill.title}
+                    alt={`${skill.title} — ${skill.desc}`}
+                    loading="lazy"
+                    itemProp="image"
                   />
                 </div>
-                <h1 className="font-neuehaas text-2xl font-bold">
+                <h3 className="font-neuehaas text-2xl font-bold" itemProp="name">
                   {skill.title}
-                </h1>
-                <p className="font-neuehaas font-medium tracking-wide text-sm opacity-80">
+                </h3>
+                <p className="font-neuehaas font-medium tracking-wide text-sm opacity-80" itemProp="description">
                   {skill.desc}
                 </p>
               </div>
@@ -211,9 +216,10 @@ const Skills = () => {
               <div
                 className="skill-bg bg-cover absolute top-0 left-0 w-full h-full rounded-[14px] bg-white bg-center"
                 style={{ backgroundImage: "url(/cardback.png)" }}
+                aria-hidden="true"
               ></div>
             </div>
-          </div>
+          </article>
         ))}
         </section>
       </div>

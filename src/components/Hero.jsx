@@ -130,22 +130,28 @@ const Hero = () => {
       className="md:h-screen w-full h-[60vh] hero-section relative"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      aria-label="Vijay Singh — MERN Stack Developer Hero Section"
+      itemScope
+      itemType="https://schema.org/Person"
     >
       <div className="hero-img h-full w-full flex items-end justify-center overflow-hidden">
         <img
           ref={imageRef}
           src="/hero-img.png"
-          alt="hero"
+          alt="Vijay Singh — MERN Stack Developer and Full-Stack Engineer from Haldwani, Uttarakhand"
           className="w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-[1400px]"
+          loading="eager"
+          fetchPriority="high"
+          itemProp="image"
         />
       </div>
 
       <div className="text-section absolute h-full w-full top-0 flex flex-col justify-between px-[3vw] py-[3vw] text-white">
         <div className="upper-text flex w-full h-[80%] items-center justify-between">
           <div className="upper-left flex flex-col items-start justify-center text-left">
-            <h2 ref={Heading1Ref} className="text-[1.4vw] font-medium text-white overflow-hidden">Hey, I'm a</h2>
+            <h2 ref={Heading1Ref} className="text-[1.4vw] font-medium text-white overflow-hidden"><span itemProp="name">Hey, I'm a</span></h2>
             <h1 ref={Heading2Ref} className="text-[6vw] font-bold tracking-tighter leading-none text-white overflow-hidden">
-              <span className="inline-block overflow-hidden"> MERN</span>
+              <span className="inline-block overflow-hidden" itemProp="jobTitle"> MERN</span>
               <br />
               <span className="inline-block overflow-hidden">ENGINEER</span>
             </h1>
@@ -157,7 +163,7 @@ const Hero = () => {
               <br />
               <span className="inline-block overflow-hidden">with solid systems.</span>
             </h3>
-            <p ref={textRef} className="text-[1vw] mt-[0.7vw] text-white/70 leading-snug overflow-hidden">
+            <p ref={textRef} className="text-[1vw] mt-[0.7vw] text-white/70 leading-snug overflow-hidden" itemProp="description">
               from localhost to deployment, Born to be a Developer.
             </p>
           </div>
