@@ -181,7 +181,7 @@ const Skills = () => {
         {skillsData.map((skill, index) => (
           <div
             key={index}
-            className="skill-card-container m-[4vh] sm:-m-[11vw] cursor-pointer z-10  "
+            className="skill-card-container m-[4vh] sm:-m-[11vw] cursor-pointer z-10 hover:scale-[110%] transition-transform duration-300"
           >
             <div
               className="skill-card w-[90vw] sm:w-[22vw] relative"
